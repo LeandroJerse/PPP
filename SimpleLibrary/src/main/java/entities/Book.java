@@ -1,6 +1,7 @@
 package entities;
 
-public class Book extends AbsBooks{
+public class Book extends AbsBooks {
+
 
     private String author;
 
@@ -22,6 +23,6 @@ public class Book extends AbsBooks{
 
     @Override
     public String toString() {
-        return this.getTitle() +  "\t" + this.getAuthor() + "\t" + this.getYear();
+        return (this.getTitle() +  "\t" + this.getAuthor() + "\t" + this.getYear());
     }
 }

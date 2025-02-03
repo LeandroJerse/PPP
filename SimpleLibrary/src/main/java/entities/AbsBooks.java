@@ -2,7 +2,7 @@ package entities;
 
 import java.util.Objects;
 
-public abstract class AbsBooks {
+public abstract class AbsBooks implements Comparable<AbsBooks>{
     private String title;
     private Integer year;
 
@@ -40,5 +40,17 @@ public abstract class AbsBooks {
         return Objects.hashCode(title);
     }
 
-    public abstract String toString();
+    @Override
+    public int compareTo(AbsBooks other) {
+        // Primeiro, compara pelo título
+        int titleComparison = this.title.compareTo(other.title);
+        if (titleComparison != 0) {
+            return titleComparison;
+        }
+        // Se os títulos forem iguais, compara pelo ano
+        return this.year.compareTo(other.year);
+    }
+
+
+
 }

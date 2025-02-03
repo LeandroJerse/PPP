@@ -4,7 +4,7 @@ import DBO.DBLibrary;
 
 public class Library {
 
-    private DBLibrary dbLibrary;
+    private DBLibrary dbLibrary = new DBLibrary();
 
     public void addBook(Book book) {
         dbLibrary.increase(book);
@@ -15,6 +15,10 @@ public class Library {
 
     public String toString(){
         return dbLibrary.toString();
+    }
+
+    public DBLibrary getDbLibrary() {
+        return dbLibrary;
     }
 
 

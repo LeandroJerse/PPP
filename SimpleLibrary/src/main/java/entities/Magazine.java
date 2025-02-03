@@ -43,6 +43,6 @@ public class Magazine extends AbsBooks{
 
     @Override
     public String toString() {
-        return getTitle() + "\t" + "\t" + getOrganization() + "\t" + getVolume() + "\t" + getNumber() + getYear();
+        return getTitle() + "\t" + "\t" + getOrganization() + "\t" + getVolume() + "\t" + getNumber() + "\t" + getYear();
     }
 }

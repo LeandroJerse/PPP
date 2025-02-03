@@ -14,9 +14,9 @@ public class MainInterface {
     private JButton JBToMagazine;
     private JButton JBToListing;
 
-    public MainInterface() {
+    public MainInterface(Library libary) {
 
-        Library libary = new Library();
+
 
         JFrame frame = new JFrame("Interface Principal");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -24,22 +24,42 @@ public class MainInterface {
 
         JBToBook.addActionListener(new ActionListener() {
 
+            //Open InterfaceBook
             @Override
             public void actionPerformed(ActionEvent e) {
-
                 new InterfaceBooks(libary);
-
-
-
+                frame.dispose();
             }
         });
+
+
         frame.getContentPane().add(JPMainP);
         frame.setVisible(true);
 
+        //Open InterfaceMagazine
+        JBToMagazine.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new InterfaceMagazine(libary);
+                frame.dispose();
+            }
+        });
+
+
+        //Open InterfaceListener
+        JBToListing.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new InterfaceListing(libary);
+                frame.dispose();
+            }
+        });
     }
 
     public static void main(String[] args) {
-        new MainInterface();
+
+        Library libary = new Library();
+        new MainInterface(libary);
 
     }
 
