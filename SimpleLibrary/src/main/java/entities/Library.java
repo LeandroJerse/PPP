@@ -21,5 +21,12 @@ public class Library {
         return dbLibrary;
     }
 
+    public boolean containsBook(Book book) {
+        return dbLibrary.contains(book);
+    }
 
+
+    public boolean containsMagazine(Magazine newMagazine) {
+        return dbLibrary.contains(newMagazine);
+    }
 }

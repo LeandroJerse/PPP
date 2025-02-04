@@ -5,6 +5,7 @@ import entities.Library;
 import entities.Magazine;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -31,8 +32,20 @@ public class InterfaceBooks {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                library.addBook(new Book("Livro: " + JTTitle.getText(),Integer.parseInt(JTYear.getText()), JTAuthor.getText()));
-                JOptionPane.showMessageDialog(frameBook, "Livro adicionado com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+
+                try{
+                    Book newBook = new Book("Livro: " + JTTitle.getText(),Integer.parseInt(JTYear.getText()), JTAuthor.getText());
+                    if(library.containsBook(newBook)){
+                        throw new IllegalArgumentException();
+                    };
+                    library.addBook(newBook);
+                    JOptionPane.showMessageDialog(frameBook, "Livro adicionado com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+                } catch (NumberFormatException ex) {
+                    JOptionPane.showMessageDialog(null, "Há valores não preenchidos", "Erro", JOptionPane.ERROR_MESSAGE);
+                } catch (IllegalArgumentException exe){
+                    JOptionPane.showMessageDialog(null, "Livro já existente", "Erro", JOptionPane.ERROR_MESSAGE);
+                }
+
             }
         });
         frameBook.getContentPane().add( JPBook);
