@@ -23,6 +23,6 @@ public class Book extends AbsBooks {
 
     @Override
     public String toString() {
-        return (this.getTitle() +  "\t" + this.getAuthor() + "\t" + this.getYear());
+        return ( "Livro: " + this.getTitle() +  "\tAutor: " + this.getAuthor() + "\tAno: " + this.getYear());
     }
 }

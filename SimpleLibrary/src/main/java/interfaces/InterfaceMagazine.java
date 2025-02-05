@@ -40,7 +40,7 @@ public class InterfaceMagazine{
             public void actionPerformed(ActionEvent e) {
 
                 try{
-                    Magazine newMagazine = new Magazine("Revista: "+JTtitleMg.getText(), Integer.parseInt(JTYear.getText()) , JTOrg.getText() ,Float.parseFloat(JTVol.getText()), Integer.parseInt(JTNro.getText()) );
+                    Magazine newMagazine = new Magazine(JTtitleMg.getText(), Integer.parseInt(JTYear.getText()) , JTOrg.getText() ,Float.parseFloat(JTVol.getText()), Integer.parseInt(JTNro.getText()) );
                     if(library.containsMagazine(newMagazine)){
                         throw new IllegalArgumentException();
                     };

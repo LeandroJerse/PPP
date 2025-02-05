@@ -43,7 +43,7 @@ public abstract class AbsBooks implements Comparable<AbsBooks>{
     @Override
     public int compareTo(AbsBooks other) {
         // Primeiro, compara pelo título
-        int titleComparison = this.title.compareTo(other.title);
+        int titleComparison = this.getTitle().compareTo(other.getTitle());
         if (titleComparison != 0) {
             return titleComparison;
         }

@@ -34,7 +34,7 @@ public class InterfaceBooks {
             public void actionPerformed(ActionEvent e) {
 
                 try{
-                    Book newBook = new Book("Livro: " + JTTitle.getText(),Integer.parseInt(JTYear.getText()), JTAuthor.getText());
+                    Book newBook = new Book(JTTitle.getText(),Integer.parseInt(JTYear.getText()), JTAuthor.getText());
                     if(library.containsBook(newBook)){
                         throw new IllegalArgumentException();
                     };
