@@ -5,6 +5,7 @@ import entities.Library;
 import entities.Magazine;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -37,8 +38,23 @@ public class InterfaceMagazine{
         JBIncludeMg.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                library.addMagazine(new Magazine("Revista: "+JTtitleMg.getText(), Integer.parseInt(JTYear.getText()) , JTOrg.getText() ,Float.parseFloat(JTVol.getText()), Integer.parseInt(JTNro.getText()) ));
-                JOptionPane.showMessageDialog(frameMagazine, "Revista adicionado com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+
+                try{
+                    Magazine newMagazine = new Magazine(JTtitleMg.getText(), Integer.parseInt(JTYear.getText()) , JTOrg.getText() ,Float.parseFloat(JTVol.getText()), Integer.parseInt(JTNro.getText()) );
+                    if(library.containsMagazine(newMagazine)){
+                        throw new IllegalArgumentException();
+                    };
+                    library.addMagazine(newMagazine);
+                    JOptionPane.showMessageDialog(frameMagazine, "Revista adicionado com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+                } catch (NumberFormatException ex) {
+
+                    JOptionPane.showMessageDialog(null, "Há valores não preenchidos", "Erro", JOptionPane.ERROR_MESSAGE);
+
+                }
+                catch (IllegalArgumentException exe){
+                    JOptionPane.showMessageDialog(null, "Livro já existente", "Erro", JOptionPane.ERROR_MESSAGE);
+                }
+
             }
         });
 

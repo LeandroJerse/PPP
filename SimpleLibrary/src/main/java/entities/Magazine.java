@@ -17,6 +17,10 @@ public class Magazine extends AbsBooks{
         this.number = number;
     }
 
+    public String getTitle() {
+        return super.getTitle() +" "+ getOrganization() + " " + getVolume() + " " + getNumber();
+    }
+
     public String getOrganization() {
         return organization;
     }
@@ -43,6 +47,6 @@ public class Magazine extends AbsBooks{
 
     @Override
     public String toString() {
-        return getTitle() + "\t" + "\t" + getOrganization() + "\t" + getVolume() + "\t" + getNumber() + "\t" + getYear();
+        return "Revista: "+super.getTitle() + "\t" + "Organização: " + getOrganization() + "\tVolume: " + getVolume() + "\tNro: " + getNumber() + "\tAno: " + getYear();
     }
 }

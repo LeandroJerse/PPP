@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Sun Mar 23 14:57:32 BRT 2025:
+ Inicializando o Derby versão The Apache Software Foundation - Apache Derby - 10.17.1.0 - (1913217): instância a816c00e-0195-c427-1e6a-00000667dc60
+no diretório de banco de dados /home/leandro/Documentos/UFU/PPP/MeuBancoDeDados 
+
+java.vendor=Ubuntu
+java.runtime.version=21.0.6+7-Ubuntu-124.04.1
+user.dir=/home/leandro/Documentos/UFU/PPP
+os.name=Linux
+os.arch=amd64
+os.version=6.11.0-19-generic
+derby.system.home=null
+Carregador de classe do banco de dados iniciado - derby.database.classpath=''

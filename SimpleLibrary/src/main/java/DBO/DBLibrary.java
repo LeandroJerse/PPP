@@ -1,8 +1,8 @@
 package DBO;
 
 import entities.AbsBooks;
-
-
+import entities.Book;
+import entities.Magazine;
 
 
 import java.util.Set;
@@ -36,11 +36,12 @@ public class DBLibrary {
     }
 
 
-
-
-
-
+    public boolean contains(AbsBooks book) {
+        return absBooks.contains(book);
     }
+
+
+}
 
 
 
